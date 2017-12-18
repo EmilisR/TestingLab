@@ -1,0 +1,314 @@
+
+\documentclass{VUMIFPSkursinis}
+\usepackage{longtable}
+\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{caption}
+\usepackage{color}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{subfig}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+
+% Titulinio aprašas
+\university{Vilniaus universitetas}
+\faculty{Matematikos ir informatikos fakultetas}
+\department{Programų sistemų katedra}
+\papertype{Antras laboratorinis darbas}
+\title{Mobiliosios Programėlės „Kur kontrole?“ Testavimo Planas}
+\titleineng{Mobile App "Where is Transport Control?" Testing Plan}
+\status{3 kurso 5 grupes studentas}
+\author{Emilis Ruzveltas}
+\supervisor{dr. Vytautas Valaitis}
+\date{Vilnius – \the\year\\ 1.0}
+
+% Nustatymai
+% \setmainfont{Palemonas}   % Pakeisti teksto šrifta i Palemonas (turi buti idiegtas sistemoje)
+\bibliography{bibliografija}
+
+\begin{document}
+\pagenumbering{gobble}
+\maketitle
+
+\tableofcontents
+\pagenumbering{arabic}
+
+\section{Testavimo plano identifikatorius}
+
+Šio testavimo plano unikalus ID: PSTTP01.  Versija - 1.0.
+
+Plano autorius: 
+Emilis Ruzveltas (Programu Sistemos, 3 kursas 5 grupė)
+
+Kontaktinė informacija:
+Elektroninis paštas: emilis.ruzveltas@mif.stud.vu.lt
+
+\section{Dokumentai ir nuorodos į juos}
+
+Užduoties pobūdis:
+
+Mobilioji programėlė skirta dalintis informacija tarp viešojo transporto keleivių apie vietas, kur patruliuoja keleivių kontrolė
+Dokumento versija: 1.0
+
+Android programavimo aspektai
+https://www.bignerdranch.com/books/android-programming/
+
+\section{Ižanga}
+
+Šio darbo tikslas sudaryti planą mobiliosios programėlės „Kur kontrolė?“ veikimo testavimui atlikti.
+Pagal ši planą ištestuoti programiną įrangą ir užfiksuoti rastus defektus.
+Plano lygmuo - „Master“. Planas apima pasirinktos programos testavimą, atitikima reikalavimams. 
+Produktas kuriamas kaip laisvalaikio projektas, todėl jokio finansavimo jam nėra. Visą projektą kurs vienas asmuo.
+Testavimas pagal ši planą bus vykdomas nuo sistemos kūrimo pradžios. Sistemai sukurti bus skirta 21 sprintas po 2 savaites.
+
+
+\section{Testavimo objektai}
+
+Bus testuojama tai kas pateikiama vartotojui naudotis:
+
+\begin{itemize}
+	\item Vartotojo sasaja
+	\item Sistemos vientisumas naudojantis keliems vartotojams
+	\item Klaidų apdorojimas
+	\item Našumas
+\end{itemize}
+
+
+\section{Programinės įrangos rizikos}
+
+Kadangi užduociu valdymo sistema nera unikalus produktas, reikes sukurti programine iranga,
+kuri savo funkcionalumu bei intuityvia vartotojo sasaja nukonkuruotu varžoves.
+Išorines integracijos, kurios bus naudojamos užduociu valdymo sistemoje, yra nusistovejusios, todel labai dideles
+rizikos nera, taciau sistemoje bus sukurtas integraciju pletimo taškai lengvam naujoviu idiegimui.
+Naudotoju duomenys bus saugomi duomenu bazeje, todel yra nedidele, bet egzistuojanti rizika, kad duomenys gali buti
+prarasti arba nutekinti tretiesiems asmenims.
+
+
+\section{Testuojamos savybes}
+
+Pagal defektu atsiradimo tikimybe programines irangos veikimo metu, rizikos lygmenys yra standartiškai suskirstyti i:
+
+\begin{itemize}
+	\item Žemas (Ž)
+	\item Vidutinis (V)
+	\item Aukštas (A)
+\end{itemize}
+
+Iš naudoto puses bus testuojama:
+
+\begin{itemize}
+	\item Greitaveika (lygis - V)
+	\item Vartotojo sasajos aiškumas (lygis - A)
+	\item Sistemos patikimumas (lygis - A)
+	\item Vartotojo sasajos dizainos (lygis - Ž)
+\end{itemize}
+
+
+\section{Netestuojamos savybes}
+
+Iš vartotojo puses nebus testuojamos senesnes programines irangos pvz.: Interneto naršykliu, SSH klientu palaikymas.
+Tai bus daroma del to, kad kuriama sistema atitktu naujausius standartus bei gerasias praktikas.
+Tuo paciu nebus švaistomas brangus programos kurimo laikas, kuris bus panaudotas programines irangos kokybes užtikrinimui
+
+
+\section{Taktika / Priejimas}
+
+Pagal 'Agile' metodologija, nustatoma, kad sprintas truks 2 savaites.
+Kiekvieno sprinto pabaigoje bus ivykdomas demo ir retrospektyvos,
+kuriu metu bus aptariamos praejusio sprinto teigiami ir neigiami aspektai.
+Kadangi prie sistemos dirbs tik du žmones kasdieniniai susitikimai bus pakeisti pokalbiais prie kavos.
+
+Sistemos kurimui naudosime: IntelliJ IDEA Ultimate, Git, MongoDB, JavaScript, Windows 10 bei Ubuntu operacines sistemas.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Kadangi prie šio projekto dirba ir programos kurimu užsiima vienas žmogus, tai vienas atliks ir testavima.
+
+Programos kurimui ir testavimui naudojami irankiai nera plataus masto: Visual Studio 2017 darbo aplinka, C\# programavimo kalba bei Windows 10 operacine sistema. 
+Irankiai gerai žinomi ir išmanomi, todel papildomu mokymu nereikes. 
+
+Testavimo metu bus pagal išsikelta reikalavimu specifikacija kuriami testavimo atvejai, jie igyvendinami. 
+Scenariju vykdymo metu gaunami rezultatai kaupiami. 
+Bus fiksuojamos salygos atvejui igyvendinti, vykdymo žingsniai, rezultatai ir busenos. 
+Metrikas sudarys teigiamu ir neigiamu rezultatu busenu santykis su testavimo atveju kiekiu. 
+
+Programine iranga testavimui atlikti naudojama standartine: Visual Studio 2017 aplinka, su standartinemis bibliotekomis skirtomis: URI konstravimui, TCP kliento ryšiui su serveriu užmegzti, gautu duomenu išsaugojimui faile. 
+
+Programos kurimo metu, atsiradus naujiems didesnes apimties pakeitimams, bus atliekami regresiniai testai. 
+Bus testuojama iki tol testuota sistemos dalis bei paruošiami nauji testai naujausiai versijai testuoti. 
+
+Neištestuoti reikalavimai paliekami testuoti velesniam laikui (tolimesnio sistemos kurimo metu arba aukštesnio lygmens testavimo metu). 
+Tai ko nepavyks arba nebus žinoma kaip ištestuoti, bus paliekama netestuota iki susitikimo su atsiskaityma vertinanciu destytoju aptarimo metu. 
+
+Susitikimai nera organizuojami, nes prie sistemos dirba tik vienas žmogus. 
+Vienintelis susitikimas atliekamas atsiskaitymo ir aptarimo su destytoju metu.
+
+Defektu valdymo proceso aprašas:
+
+Testavimo metu randami defektai bus kaupiami ir registruojami. 
+Kiekvienam defektui suteikiamas unikalus ID, jo kilimui nustatyti ir taisyti bus sudaromas defekto aprašas, poveikio lygmuo, testavimo atvejo ID, kurio metu defektas užfiksuotas bei rekomendacijos defekto pašalinimui.
+
+Pagal poveiki programines irangos veikimui, defektai yra suskirstyti i:
+
+\begin{itemize}
+	\item Svarbus - defektas trukdo programai teisingai atlikti esmines funkcijas. Kilus šio tipo programos
+	veikimo sutrikimui, programa dalimi atveju veiks kitaip negu numatyta reikalavimuose,
+	gali duomenu visai neatsiusti ar gadinti kitus teisingai gautus duomenis.
+	\item Vidutinis - defektas trukdo programai teisingai atlikti pagalbines funkcijas. Kilus šio tipo
+	programos veikimo sutrikimui, programa dalimi atveju gali veikti neefektyviai, leciau negu
+	turetu ar prarasti dali pasikartojanciu duomenu, dublikatu.
+\end{itemize}
+
+\section{Sekmingo / Nesekmingo testavimo kriterijai}
+
+Testavimo atvejis yra laikomas sekmingu, kai jo vykdymo metu nekyla jokie defektai, tikimasis atvejo rezultatas sutampa su atvejo vykdymo rezultatu. 
+Kitu atveju, laikoma nesekmingu, fiksuojamas defektas.
+
+Testavimo etapas laikomas sekmingu, kai yra ivykdomi visi (100%) testavimo atvejai, kodo padengimo testais yra virš 90%, užfiksuotu defektu skaicius neviršija 10% testavimo atveju, ju kritiškumas yra vidutinis arba ju pašalinimas galimas kito testavimo lygmens metu. 
+Kitu atveju, laikoma nesekmingu, šalinami aptikti defektai.
+
+Projekto testavimas laikomas sekmingu, kai yra pilnai ivykdyti visu etapu testavimo planai, neištaisytu defektu yra ne daugiau kaip 10% ir ju kritiškumas nera svarbus. 
+Kitu atveju, laikoma nesekmingu, toliau šalinami aptikti defektai, vykdomi etapu testavimo planai.
+
+\section{Sustabdymo ir pratesimo kriterijai}
+
+Stabdymas daromas, jei defektu kiekis testavimo etapo metu viršija 30% lyginant su testavimo atveju kiekiu. 
+Stabdymo laikotarpis priklauso, nuo kaip toli atsiskaitymo laikotarpio pabaiga, jei laiko dar daug (daugiau negu savaite) defektai šalinami, kol ju lieka mažiau nei 10% ir nera svarbiu defektu, jei laiko mažai, kol bendras visu defektu kiekis nebeviršija 20%.
+
+\section{Planuojami darbo produktai}
+
+Darbo metu planuojami: 
+
+\begin{itemize}
+	\item Sudarytas testavimo planas
+	\item Sukurti testavimo atvejai, padengiantys bent 90% kodo ir visus testavimo objektus
+	\item Testavimo atveju vykdymo, defektu aptikimo ir ju šalinimo rekomendaciju analizes žurnalas
+\end{itemize}
+
+\section{Likusios testavimo užduotys}
+
+Testavima vykdo vienintelis žmogus, kuris ir kuria testavimo plana, todel likusias užduotis jis ir vykdys:
+
+\begin{itemize}
+	\item Sukurti testavimo atvejus
+	\item Igyvendinti testavimo atvejus
+	\item Užfiksuoti ir aprašyti aptiktus defektus
+	\item Aprašyti defektu šalinimo rekomendacijas
+\end{itemize}
+
+\section{Reikalingos aplinkos}
+
+Testavimui atlikti reikalingos aplinkos yra: operacine aplinka Windows (viena iš versiju: 7, 8, 8.1, 10), Microsoft Visual Studio (viena iš versiju: 2015, 2017) ir jos bibliotekos. 
+Testavimui skirti failai, esantys patalpinti internete ir pasiekiami per URL adresa. 
+Papildomu programines irangos reikmiu nera.
+
+\section{Kompetenciju ir mokymu poreikiai}
+
+Sistemos kurimui ir testavimui atlikti reikalinga žinoti ir moketi dirbti su C\# programavimo kalba, .NET karkasu (angl. Framework). 
+Testuojamos sistemos ir irankiu naudojimo mokymu nera reikiamybes daryti, nes prie sistemos dirba tik vienas žmogus, kuris tai turi pakankamai išmanyti.
+
+\section{Atsakomybes}
+
+Kadangi prie sistemos dirba vienas žmogus, jis ir yra atsakingas už visus pateikiamus kriterijus: 
+
+\begin{itemize}
+	\item Riziku valdyma
+	\item Testuojamas ir netestuojamas savybes
+	\item Testavimo taktika
+	\item Testavimo etapu nustatyma ir aprašyma
+	\item Testavimo atveju sukurima
+	\item Aplinkas
+	\item Grafiko problemu sprendima
+	\item Kompetencijas, žiniu turejima
+	\item Kritinius sprendimus, neapibrežtus testavimo plane
+	\item Testavimo rezultatu rinkima ir registravima
+\end{itemize}
+
+\section{Grafikas}
+
+Testavimo plano vykdymo grafikas yra pateikiamas pagristas realistiškais ir patikrintais ivertinimais.
+Darbo vykdymo laikas nurodomas ne konkreciomis datomis, o susietas su programavimo, testavimo rezultatais ir prieš tai esanciu žingsniu vykdymu.
+
+\begin{itemize}
+	\item Iš destytojo gautu, pradiniu reikalavimu peržiura.
+	\item Reikalavimu specifikacijos sudarymas, prasideda valanda po pradiniu reikalavimu peržiuros.
+	\item „Master“ lygmens testavimo plano sudarymas, diena po reikalavimu specifikacijos sudarymo.
+	\item Testavimo etapu planavimas ir valdymas, valanda po pagrindinio testavimo plano sudarymo.
+	\item Testavimo atveju kurimas ir analize, prasideda diena po visu testavimo planu sudarymo.
+	\item Vienetu testavimo vykdymas, daromas sistemos surikimo metu, diena po to, kai paruošiami testavimo atvejai.
+	\item Integracijos, sistemos ir priemimo testavimo vykdymas, diena po sistemos surinkimo pabaigos.
+	\item Rezultatu rinkimas, registravimas ir kaupimas, vykdomas testavimo metu.
+	\item Rezultatu vertinimas ir ataskaitu rengimas, prasideda valanda po rezultatu surinkimo pabaigos.
+\end{itemize}
+
+Nukrypus nuo grafiko spartinimas grafiko vykdymas, žingsniai kurie turetu buti pradedami vykdyti diena po prieš tai esancio žingsnio pabaigimo, pradeda ta pacia diena. 
+Stengiamasi išlaikyti nukrypima kuo mažesni, bei nenukrypti nuo grafiko dar labiau su tolimesniu testavimo proceso žingsniu vykdymu. 
+Jeigu nukrypimas  nuo grafiko vis dar yra likus savaitei iki atsiskaitymo datos, atsižvelgiama i „Stabdymo ir pratesimo“ metu nurodytus lengvatinius kriterijus sistemos galutiniam ištestavimui.
+
+\section{Rizikos ir nenumatyti atvejai}
+
+Jeigu truks žmoniu ar mokymu, nieko pakeisti neimanoma. Darba atlieka vienas žmogus, todel papildomai prie darbo su sistema pakviesti negalima ir vykdyti mokymu neapsimoka. 
+
+Jeigu truks irankiu, duomenu ar žiniu likus savaitei iki atsiskaitymo datos, bus sumažintas atliekamu testu skaicius, prailginamos darbo valandos, kad igyti papildomu žiniu, gauti reikiamu duomenu ir irankiu.
+
+Jeigu veluos programavimas, likus savaitei iki atsiskaitymo datos, bus sumažintas atliekamu testu skaicius, padidintas priimtinas defektu skaicius, prailginamos darbo valandos. Viso to butu imamasi, kad visi darbai butu pilnai užbaigti iki atsiskaitymo datos.
+
+Jeigu keisis reikalavimai, likus savaitei iki atsiskaitymo datos, nukelta testavimo pabaigos data viena diena tolyn, padidintas priimtinas defektu skaicius, prailginamos darbo valandos. Viso to butu imamasi, kad iki atsiskaitymo datos, butu užtikrintas atitikimas visiems pasikeitusiems reikalavimams.
+
+\section{Patvirtinimai}
+
+Testavimo plano korektiškuma patvirtins jo sudarymui vadovaujantis destytojas (darbo vadovas).
+
+\section{Žodynelis}
+
+Savokos:
+
+\begin{itemize}
+	\item HTTP 1.1 Standartas - standartinis budas informacijai pasauliniame internetiniame tinkle (WWW) pasiekti. 
+		  Pradine protokolo paskirtis – pateikti standartini buda HTML puslapiams skelbti ir skaityti.
+	\item Pasaulinis internetinis tinklas (WWW) - interneto dalis, resursai, kuriuos internete galima pasiekti naudojant URL (Vieningus Resursu Identifikatorius).
+		  Pasaulinis tinklas daugiausia remiasi hipertekstu – HTTP protokolu ir HTML kalba.
+	\item Hiperteksto žymejimo kalba (HTML) - tai kompiuterine žymejimo kalba, naudojama pateikti turini internete.
+	\item Dokumento adreso lokatorius (URL) - tai unikalus adresas, nurodantis kur yra patalpintas internetinis puslapis ir kaip ji pasiekti.
+	\item ,,Master'' lygmuo - Testavimo plano lygmuo, nurodantis, kaip bus vykdomas visas testavimo planas bei kad bus kuriami testavimo etapu planai.
+	
+\end{itemize}
+
+Sutrumpinimai:
+
+\begin{itemize}
+	\item HTTP - trumpinys iš angl. HyperText Transfer Protocol
+	\item WWW - trumpinys iš angl. World Wide Web
+	\item HTML - trumpinys iš angl. Hyper text Markup Language
+	\item URL - trumpinys iš angl. Uniform Resource Locator
+	\item Testavimo lygmenys:
+		\begin{itemize}
+			\item V - vienetu
+			\item I - integracijos
+			\item S - sistemos
+			\item P - priemimo
+		\end{itemize}
+	\item Riziku lygmenys:
+		\begin{itemize}
+			\item Ž - žemas
+			\item V - vidutinis
+			\item A - aukštas
+		\end{itemize}
+\end{itemize}
+\end{document}
